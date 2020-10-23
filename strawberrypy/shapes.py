@@ -24,6 +24,13 @@ class Layer:
     def Add(self, shape):
         self.shapes.append(shape)
 
+    def Render(self, resolution):
+        surface = pygame.Surface(resolution)
+        for s in self.shapes:
+            pygame.draw.polygon(surface, s.color, s.verts)
+
+        return surface
+
 class Polygon:
     def __init__(self, verts, color):
         self.type = "POLYGON"
