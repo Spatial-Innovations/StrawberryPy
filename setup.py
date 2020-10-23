@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="strawberrypy",
-    version="0.0.2",
+    version="0.0.3",
     author="Spatial Innovations",
     author_email="spatialinnovations@gmail.com",
     description="Graphical animation module.",
