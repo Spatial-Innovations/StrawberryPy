@@ -16,6 +16,7 @@
 # ##### END GPL LICENSE BLOCK #####
 
 import os
+import sys
 import shutil
 import numpy
 import pygame
@@ -66,17 +67,21 @@ Layers: {len(self.layers)}"""
         Exports into a video file.
         :param path: Path (with extension, like .mp4) of final video.
         """
+        print(f"Exporting to {path}")
         # Initialize directory
         PARENT = os.path.dirname(__file__)
         tmpDir = os.path.join(PARENT, "tmp")
+        print(f"Step 1/4: Create tmp directory: {tmpDir}")
         os.makedirs(tmpDir, exist_ok=True)
 
         # Save images to frames
+        print("Step 2/4: Saving images to tmp directory.")
         for i, frame in enumerate(self.Render()):
             pixels = numpy.array(frame, dtype=numpy.uint8)
             Image.fromarray(pixels).save(os.path.join(PARENT, "tmp", f"{i}.png"))
 
         # Compile into video
+        print("Step 3/4: Compiling video")
         images = [img for img in os.listdir(tmpDir)]
         frame = cv2.imread(os.path.join(tmpDir, images[0]))
         height, width, layers = frame.shape
@@ -87,5 +92,6 @@ Layers: {len(self.layers)}"""
         video.release()
 
         # Clean up
+        print("Step 4/4: Clean up")
         cv2.destroyAllWindows()
         shutil.rmtree(tmpDir)
