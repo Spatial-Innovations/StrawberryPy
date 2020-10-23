@@ -18,6 +18,7 @@
 import os
 import shutil
 import numpy
+import pygame
 import cv2
 from PIL import Image
 
@@ -32,6 +33,28 @@ class Engine:
         self.fps = fps
         self.layers = []
 
+    def AddLayer(self, layer):
+        """
+        Append a layer to the layer list.
+        :param layer: Layer object to append.
+        """
+        self.layers.append(layer)
+
+    def Render(self):
+        surface = pygame.Surface(self.res)
+        for l in self.layers:
+            surface.blit(l.Render(self.res), (0, 0))
+
+        pixels = []
+        for y in range(self.res[1]):
+            currRow = []
+            for x in range(self.res[0]):
+                currRow.append(surface.get_at((x, y)))
+            pixels.append(currRow)
+
+        return [pixels]
+
+
     def Export(self, path):
         """
         Exports into a video file.
@@ -45,7 +68,7 @@ class Engine:
         # Save images to frames
         for i, frame in enumerate(self.Render()):
             pixels = numpy.array(frame, dtype=numpy.uint8)
-            Image.fromarray(pixels).save(os.path.join(PARENT, "tmp", f"{i}.jpg"))
+            Image.fromarray(pixels).save(os.path.join(PARENT, "tmp", f"{i}.png"))
 
         # Compile into video
         images = [img for img in os.listdir(tmpDir)]
@@ -60,6 +83,3 @@ class Engine:
         # Clean up
         cv2.destroyAllWindows()
         shutil.rmtree(tmpDir)
-
-    def AddLayer(self, layer):
-        self.layers.append(layer)
