@@ -18,8 +18,18 @@
 from . import export
 
 class Engine:
-    def __init__(self):
-        self.data = None
+    def __init__(self, resolution, fps):
+        """
+        Initializes engine.
+        :param resolution: Reesolution (x, y) pixels of final video.
+        :param fps: Frames per second of final video.
+        """
+        self.res = resolution
+        self.fps = fps
 
     def Export(self, path):
-        export.Export(self.data, path)
+        """
+        Exports into a video file.
+        :param path: Path (with extension, like .mp4) of final video.
+        """
+        export.Export(self, path)
