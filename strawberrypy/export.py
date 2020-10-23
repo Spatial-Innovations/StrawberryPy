@@ -16,14 +16,32 @@
 # ##### END GPL LICENSE BLOCK #####
 
 import os
+import shutil
 import numpy
+import cv2
 from PIL import Image
 
 def Export(data, path):
+    # Initialize directory
     PARENT = os.path.dirname(__file__)
     tmpDir = os.path.join(PARENT, "tmp")
     os.makedirs(tmpDir, exist_ok=True)
 
+    # Save images to frames
     for i, frame in enumerate(data.Render()):
         pixels = numpy.array(frame, dtype=numpy.uint8)
         Image.fromarray(pixels).save(os.path.join(PARENT, "tmp", f"{i}.jpg"))
+
+    # Compile into video
+    images = [img for img in os.listdir(tmpDir)]
+    frame = cv2.imread(os.path.join(tmpDir, images[0]))
+    height, width, layers = frame.shape
+    video = cv2.VideoWriter(path, 0, 30, (width, height))
+    for img in images:
+        video.write(cv2.imread(os.path.join(tmpDir, img)))
+
+    video.release()
+
+    # Clean up
+    cv2.destroyAllWindows()
+    shutil.rmtree(tmpDir)
