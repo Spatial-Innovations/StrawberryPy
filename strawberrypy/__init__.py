@@ -16,6 +16,7 @@
 # ##### END GPL LICENSE BLOCK #####
 
 from .engine import Engine
+from .shapes import Polygon
 
 print("""
 Python module StrawberryPy, a Mathematical Animation module.
