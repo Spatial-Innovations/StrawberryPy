@@ -1,2 +1,2 @@
 # StrawberryPy
-### Mathematical animation program.
+### Graphical animation module.

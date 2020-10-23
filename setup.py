@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="strawberrypy",
-    version="0.0.1",
+    version="0.0.2",
     author="Spatial Innovations",
     author_email="spatialinnovations@gmail.com",
-    description="Mathematical animation module.",
+    description="Graphical animation module.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Spatial-Innovations/strawberrypy",

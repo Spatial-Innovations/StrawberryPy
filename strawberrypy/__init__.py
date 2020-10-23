@@ -19,7 +19,7 @@ from .engine import Engine
 from .shapes import Polygon
 
 print("""
-Python module StrawberryPy, a Mathematical Animation module.
+Python module StrawberryPy, a Graphical Animation module.
 Owner: Spatial Innovations <https://github.com/Spatial-Innovations>
 Contributors:
     Patrick Huang <https://github.com/HuangPatrick16777216>
