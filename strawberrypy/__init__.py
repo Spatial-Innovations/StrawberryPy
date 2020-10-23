@@ -15,7 +15,7 @@
 #
 # ##### END GPL LICENSE BLOCK #####
 
-from .engine import Engine, Layer
+from .scene import Scene2D, Layer
 
 print("""
 Python module StrawberryPy, a Graphical Animation module.

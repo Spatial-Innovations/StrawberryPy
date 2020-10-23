@@ -23,10 +23,10 @@ import pygame
 import cv2
 from PIL import Image
 
-class Engine:
+class Scene2D:
     def __init__(self, resolution, fps):
         """
-        Initializes engine.
+        Initializes 2D scene.
         :param resolution: Reesolution (x, y) pixels of final video.
         :param fps: Frames per second of final video.
         """
@@ -35,7 +35,7 @@ class Engine:
         self.layers = []
         
     def __repr__(self):
-        return f"""StrawberryPy Engine object:
+        return f"""StrawberryPy Scene object:
 Resolution: {self.res}
 Fps: {self.fps}
 {len(self.layers)} Layers"""
