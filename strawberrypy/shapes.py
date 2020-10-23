@@ -17,26 +17,6 @@
 
 import pygame
 
-
-class Layer:
-    def __init__(self):
-        self.shapes = []
-
-    def __repr__(self):
-        return f"""StrawberryPy Layer object:
-Shapes: {len(self.shapes)}"""
-
-    def Add(self, shape):
-        self.shapes.append(shape)
-
-    def Render(self, resolution):
-        surface = pygame.Surface(resolution)
-        for s in self.shapes:
-            s.Draw(surface)
-
-        return surface
-
-
 class Polygon:
     def __init__(self, verts, color, border=0):
         self.type = "POLYGON"

@@ -15,8 +15,7 @@
 #
 # ##### END GPL LICENSE BLOCK #####
 
-from .engine import Engine
-from .shapes import Polygon
+from .engine import Engine, Layer
 
 print("""
 Python module StrawberryPy, a Graphical Animation module.
