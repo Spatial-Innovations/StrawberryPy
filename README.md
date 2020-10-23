@@ -1,2 +1,2 @@
-# CherryPy
-Mathematical animation program.
+# StrawberryPy
+### Mathematical animation program.
