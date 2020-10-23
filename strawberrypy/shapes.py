@@ -17,6 +17,7 @@
 
 import pygame
 
+
 class Layer:
     def __init__(self):
         self.shapes = []
@@ -34,6 +35,7 @@ Shapes: {len(self.shapes)}"""
             pygame.draw.polygon(surface, s.color, s.verts)
 
         return surface
+
 
 class Polygon:
     def __init__(self, verts, color):

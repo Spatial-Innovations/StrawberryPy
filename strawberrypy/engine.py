@@ -37,7 +37,7 @@ class Engine:
         return f"""StrawberryPy Engine object:
 Resolution: {self.res}
 Fps: {self.fps}
-Layers: {len(self.layers)}"""
+{len(self.layers)} Layers"""
 
     def AddLayer(self, layer):
         """
