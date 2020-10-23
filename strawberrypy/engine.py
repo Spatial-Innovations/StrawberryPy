@@ -32,6 +32,12 @@ class Engine:
         self.res = resolution
         self.fps = fps
         self.layers = []
+        
+    def __repr__(self):
+        return f"""StrawberryPy Engine object:
+Resolution: {self.res}
+Fps: {self.fps}
+Layers: {len(self.layers)}"""
 
     def AddLayer(self, layer):
         """

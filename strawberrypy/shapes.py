@@ -21,6 +21,10 @@ class Layer:
     def __init__(self):
         self.shapes = []
 
+    def __repr__(self):
+        return f"""StrawberryPy Layer object:
+Shapes: {len(self.shapes)}"""
+
     def Add(self, shape):
         self.shapes.append(shape)
 
@@ -36,3 +40,8 @@ class Polygon:
         self.type = "POLYGON"
         self.verts = verts
         self.color = color
+
+    def __repr__(self):
+        return f"""StrawberryPy Shape object:
+Verts: {self.verts}
+Color: {self.color}"""
