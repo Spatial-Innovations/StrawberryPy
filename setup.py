@@ -14,6 +14,10 @@ setuptools.setup(
     url="https://github.com/Spatial-Innovations/strawberrypy",
     py_modules=["strawberry"],
     packages=setuptools.find_packages(),
+    install_requires=[
+        "Pillow",
+        "numpy"
+    ],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)",
