@@ -32,7 +32,7 @@ Shapes: {len(self.shapes)}"""
     def Render(self, resolution):
         surface = pygame.Surface(resolution)
         for s in self.shapes:
-            pygame.draw.polygon(surface, s.color, s.verts)
+            s.Draw(surface)
 
         return surface
 
@@ -44,6 +44,26 @@ class Polygon:
         self.color = color
 
     def __repr__(self):
-        return f"""StrawberryPy Shape object:
+        return f"""StrawberryPy Polygon Shape object:
 Verts: {self.verts}
 Color: {self.color}"""
+
+    def Draw(self, surface):
+        pygame.draw.polygon(surface, self.color, self.verts)
+
+
+class Circle:
+    def __init__(self, loc, radius, color):
+        self.type = "CIRCLE"
+        self.loc = loc
+        self.radius = radius
+        self.color = color
+
+    def __repr__(self):
+        return f"""StrawberryPy Circle Shape object:
+Location: {self.loc}
+Radius: {self.radius}
+Color: {self.color}"""
+
+    def Draw(self, surface):
+        pygame.draw.circle(surface, self.color, self.loc, self.radius)
