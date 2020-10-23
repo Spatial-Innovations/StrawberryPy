@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.0.1",
     author="Spatial Innovations",
     author_email="spatialinnovations@gmail.com",
-    description="A very asdfed package",
+    description="Mathematical animation module.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Spatial-Innovations/PumpkinPy",
