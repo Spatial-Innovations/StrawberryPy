@@ -15,6 +15,8 @@
 #
 # ##### END GPL LICENSE BLOCK #####
 
+from .engine import Engine
+
 print("""
 Python module CherryPy, a Mathematical Animation module.
 Owner: Spatial Innovations <https://github.com/Spatial-Innovations>
