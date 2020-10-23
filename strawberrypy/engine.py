@@ -15,6 +15,11 @@
 #
 # ##### END GPL LICENSE BLOCK #####
 
+from . import export
+
 class Engine:
     def __init__(self):
-        pass
+        self.data = None
+
+    def Export(self, path):
+        export.Export(self.data, path)
