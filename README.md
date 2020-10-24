@@ -9,4 +9,5 @@
 * Layers contain shapes, added like this: `layer.Add(strawberrypy.shapes.(some shape))`
 
 ### Avaliable shapes
-* Polygon: strawberrypy.Polygon(((vert1X, vert1Y), (vert2X, vert2Y)), (R, G, B))
+* Polygon: strawberrypy.shapes.Polygon(((vert1X, vert1Y), (vert2X, vert2Y)), (R, G, B), borderWidth)
+* Circle: strawberrypy.shapes.Circle((centerX, centerY), radius, (R, G, B), borderWidth)
