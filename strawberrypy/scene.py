@@ -22,6 +22,7 @@ import numpy
 import pygame
 import cv2
 from PIL import Image
+from .errors import ExportError
 
 class Scene2D:
     def __init__(self, resolution, fps):
@@ -64,12 +65,11 @@ Fps: {self.fps}
     def Export(self, path):
         """
         Exports into a video file.
-        :param path: Path (with extension, like .mp4) of final video.
+        :param path: Path of final video.
         """
         # Check extension
         if not path.endswith(".mp4"):
-            print("Only .mp4 files are allowed.")
-            return
+            raise ExportError("StrawberryPy: Only .mp4 files are allowed.")
             
         print(f"Exporting to {path}")
         # Initialize directory
