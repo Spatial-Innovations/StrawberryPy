@@ -66,6 +66,11 @@ Fps: {self.fps}
         Exports into a video file.
         :param path: Path (with extension, like .mp4) of final video.
         """
+        # Check extension
+        if not path.endswith(".mp4"):
+            print("Only .mp4 files are allowed.")
+            return
+            
         print(f"Exporting to {path}")
         # Initialize directory
         PARENT = os.path.dirname(__file__)
