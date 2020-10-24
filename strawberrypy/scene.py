@@ -54,10 +54,9 @@ Fps: {self.fps}
 
         pixels = []
         for y in range(self.res[1]):
-            currRow = []
+            pixels.append([])
             for x in range(self.res[0]):
-                currRow.append(surface.get_at((x, y)))
-            pixels.append(currRow)
+                pixels[y].append(surface.get_at((x, y)))
 
         return [pixels]
 
